@@ -1,0 +1,76 @@
+	1. Conceitos Básicos de SQL:
+1) Crie uma tabela chamada "Clientes" com colunas para "ID" (chave primária autoincrementada), "Nome" (com restrição de unicidade), "Email" (com restrição de unicidade), "Telefone", "Data_Cadastro" (com valor padrão para a data atual) e "Status" (ativo/inativo com restrição de valor padrão para ativo).
+2) Insira pelo menos 50 registros na tabela "Clientes" com informações fictícias, garantindo unicidade nos campos de email e telefone.
+3) Selecione todos os registros da tabela "Clientes" ordenados por data de cadastro em ordem decrescente e, em caso de empate, por nome.
+4) Selecione apenas os nomes e emails dos clientes cuja data de cadastro seja anterior a dois anos atrás e que estejam com o status ativo.
+5) Atualize o telefone de um cliente específico na tabela "Clientes" e registre a data da última modificação.
+6) Delete um cliente da tabela "Clientes" usando o ID e registre a data da exclusão.
+7) Crie uma tabela chamada "Pedidos" com colunas para "ID" (chave primária autoincrementada), "Cliente_ID" (chave estrangeira referenciando a tabela Clientes), "Produto" (com restrição de não nulo), "Quantidade" (com restrição de valor padrão para 1), "Valor_Unitario" (com restrição de não nulo) e "Data_Pedido" (com valor padrão para a data atual).
+8) Insira pelo menos 100 registros na tabela "Pedidos" associados aos clientes existentes na tabela "Clientes", garantindo uma ampla variedade de produtos e quantidades em cada pedido.
+9) Faça uma consulta que retorne todos os pedidos de um cliente específico, ordenados pela data do pedido em ordem decrescente e, em caso de empate, pelo valor total do pedido.
+10) Faça uma consulta que retorne todos os clientes que fizeram pedidos nos últimos 18 meses, junto com o total de pedidos realizados por cada cliente e o valor total gasto.
+
+______________________________________________________________________________________________________________________________
+	2. Consultas Avançadas:
+1) Selecione os produtos que tenham uma quantidade em estoque menor que 5 e cujo preço seja maior que 500, ordenados pelo preço unitário em ordem decrescente.
+2) Selecione os clientes que não fizeram nenhum pedido nos últimos 12 meses.
+3) Selecione os pedidos que contenham pelo menos um produto com valor unitário superior a 1000 e cujo total do pedido seja maior que 2000.
+4) Calcule o total de vendas de cada cliente nos últimos 36 meses, considerando apenas pedidos finalizados e registrando a data da última compra.
+5) Encontre o produto mais vendido nos últimos 24 meses, considerando tanto a quantidade de itens vendidos como o valor total das vendas, e registre a data da última compra.
+6) Selecione os clientes que fizeram mais de 20 pedidos nos últimos 36 meses, e que o valor total gasto seja superior a 10000.
+7) Encontre os pedidos feitos em um determinado período de tempo (por exemplo, entre 1º de janeiro e 31 de dezembro do ano anterior), ordenados pela data do pedido em ordem crescente.
+8) Calcule o total de produtos em estoque por categoria, considerando apenas produtos com estoque disponível e registrando a data da última atualização.
+9) Encontre os clientes que gastaram mais de 50000 em pedidos nos últimos 36 meses, e que tenham realizado pelo menos 10 pedidos.
+10) Selecione os produtos ordenados por quantidade em estoque de forma decrescente e, em caso de empate, por valor unitário em ordem crescente.
+
+______________________________________________________________________________________________________________________________
+	3. Modelagem de Dados:
+1) Crie uma tabela "Produtos" com colunas para "ID" (chave primária autoincrementada), "Nome" (com restrição de unicidade), "Descrição", "Preço_Unitario", "Quantidade_Minima", "Fornecedor_ID" (chave estrangeira referenciando a tabela Fornecedores) e "Data_Cadastro" (com valor padrão para a data atual).
+2) Crie uma tabela "Pedidos" com colunas para "ID" (chave primária autoincrementada), "Cliente_ID" (chave estrangeira referenciando a tabela Clientes), "Data_Pedido", "Status" (aberto/fechado), "Valor_Total" e "Forma_Pagamento" (cartão/dinheiro).
+3) Crie uma tabela "Funcionarios" com colunas para "ID" (chave primária autoincrementada), "Nome", "Cargo", "Salario" e "Data_Admissao" (com valor padrão para a data atual).
+4) Crie uma tabela "Fornecedores" com colunas para "ID" (chave primária autoincrementada), "Nome", "CNPJ" (com restrição de unicidade), "Endereco" e "Telefone".
+5) Crie uma tabela "Estoque" com colunas para "Produto_ID" (chave primária e chave estrangeira referenciando a tabela Produtos), "Quantidade" e "Localizacao" (prateleira/estoque).
+6) Crie uma tabela "Categorias" com colunas para "ID" (chave primária autoincrementada) e "Nome".
+7) Adicione uma coluna "Categoria_ID" à tabela "Produtos" e defina-a como não nula, com valor padrão para uma categoria padrão.
+8) Adicione uma coluna "Data_Modificacao" à tabela "Pedidos" para registrar a data da última modificação.
+9) Adicione uma coluna "Telefone_Contato" à tabela "Fornecedores" e defina-a como única.
+10) Adicione uma coluna "Ultimo_Acesso" à tabela "Clientes" para registrar a data do último acesso do cliente ao sistema.
+
+______________________________________________________________________________________________________________________________
+	4. Administração de Banco de Dados:
+1) Faça backup da base de dados com compressão, criptografia e agendamento para execução automática diária, e armazene os backups em um local seguro e externo.
+2) Restaure a base de dados a partir de um backup específico de um determinado ponto no tempo, garantindo a integridade dos dados restaurados e registrando a data da restauração.
+3) Adicione uma nova coluna à tabela "Clientes" sem remover os dados existentes e defina-a como não nula, com um valor padrão pré-definido.
+4) Remova uma coluna da tabela "Pedidos" e registre a data da alteração, garantindo que os dados relacionados à coluna sejam mantidos ou tratados adequadamente.
+5) Altere o tipo de dados de uma coluna na tabela "Produtos", garantindo a integridade dos dados durante a conversão e registrando a data da modificação.
+6) Adicione uma restrição de chave estrangeira à tabela "Pedidos" para a coluna "Cliente_ID" e defina a ação de atualização e exclusão conforme necessário, garantindo a consistência dos dados relacionados.
+7) Crie um índice na coluna "Nome" da tabela "Clientes" e avalie o impacto nas consultas antes e depois da criação do índice.
+8) Revogue todos os privilégios de um usuário específico e registre a data e hora da revogação.
+9) Conceda permissões de seleção em uma tabela para um novo usuário e registre a data da concessão, limitando o acesso apenas aos dados necessários.
+10) Monitore o espaço em disco utilizado pelo banco de dados e envie um alerta caso ultrapasse um limite predefinido, automatizando a alocação de mais espaço conforme necessário.
+
+______________________________________________________________________________________________________________________________
+	5. Programação em SQL:
+1) Crie uma função que retorne o total de pedidos feitos por um cliente específico nos últimos 12 meses, considerando apenas pedidos finalizados, e registre a data e hora da consulta.
+2) Crie um procedimento armazenado que atualize o preço de um produto para um novo valor especificado, garantindo a integridade dos dados e registrando a data e hora da modificação.
+3) Crie uma função que calcule o valor total de um pedido, incluindo descontos, taxas e impostos, e registre a data e hora da consulta.
+4) Crie um procedimento armazenado que adicione um novo cliente com informações detalhadas, como endereço completo, telefone celular e data de nascimento, e registre a data e hora da operação.
+5) Crie uma função que retorne a quantidade total de um produto em estoque em todas as localizações do armazém, considerando as últimas atualizações e registrando a data e hora da consulta.
+6) Crie um procedimento armazenado que remova um cliente e todos os seus pedidos, permitindo opcionalmente uma data para exclusão definitiva ou apenas desativação, e registrando a data e hora da operação.
+7) Crie uma função que retorne a média de preços dos produtos agrupados por categoria, considerando apenas produtos com vendas recentes, e registre a data e hora da consulta.
+8) Crie um procedimento armazenado que adicione um novo pedido com múltiplos produtos de uma vez, garantindo a integridade dos dados e registrando a data e hora da operação.
+9) Crie uma função que retorne o número total de produtos em uma categoria específica, considerando apenas produtos com estoque disponível, e registre a data e hora da consulta.
+10) Crie um procedimento armazenado que exclua todos os pedidos feitos por um cliente específico nos últimos 6 meses, garantindo a confirmação da exclusão e registrando a data e hora da operação.
+
+______________________________________________________________________________________________________________________________
+	6. Tópicos Avançados:
+1) Crie uma visão que retorne os pedidos feitos nos últimos 30 dias, incluindo informações detalhadas do cliente, produtos e status do pedido, e registre a data e hora da consulta.
+2) Utilize transações para garantir a consistência ao adicionar um novo cliente e pedido simultaneamente, revertendo a operação em caso de falha e registrando a data e hora da tentativa.
+3) Crie um gatilho que atualize a quantidade de um produto em estoque sempre que um novo pedido for adicionado, considerando múltiplos produtos em um mesmo pedido e registrando a data e hora da modificação.
+4) Utilize índices clusterizados para otimizar consultas frequentes em tabelas grandes, como a tabela de pedidos, e avalie o impacto nas consultas antes e depois da implementação.
+5) Crie uma função que retorne a quantidade de produtos vendidos em um determinado período de tempo, considerando apenas pedidos finalizados, e registre a data e hora da consulta.
+6) Utilize particionamento de tabelas para gerenciar grandes volumes de dados na tabela de pedidos, distribuindo os dados em partições mensais e avaliando o desempenho das consultas.
+7) Crie uma função que calcule o desvio padrão dos preços dos produtos agrupados por categoria, considerando apenas produtos com vendas recentes, e registre a data e hora da consulta.
+8) Utilize a criptografia para proteger informações sensíveis armazenadas no banco de dados, como senhas de clientes, e gerencie chaves de forma segura.
+9) Implemente uma política de backup automatizada para garantir a segurança dos dados, incluindo backups diferenciais e logs de transações, e avalie regularmente a integridade dos backups.
+10) Utilize o log de transações para rastrear alterações feitas no banco de dados, incluindo quem realizou a operação, a data e hora, e o tipo de alteração realizada, garantindo a auditoria completa das atividades no banco de dados.

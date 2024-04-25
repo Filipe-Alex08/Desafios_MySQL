@@ -1,0 +1,6 @@
+SQL
+Criei 100 desafios que estarei realizando e fazendo com o intuito não só de adquirir conhecimento, mas também comprova-lo e também para me manter atualizado.
+Tive algumas dificuldades em encontrar topicos de SQL, portanto segui diretamente com o ChatGPT para criar os desafios. Portanto criei apenas 70 desafios, mas pretendo acrescentar o restante conforme meu conhecimento em SQL for aumentando.
+
+Mas caso você tenham algum desafio para acrescentar a minha lista ou tenha uma oportunidade para mim, entrem em contato comigo no:
+- LinkedIn: Filipe.alex08
